@@ -3,6 +3,8 @@
 puts "🌱 Seeding...."
 
 
+
+
 sam = User.create(
 
     name: "Sam", 
@@ -22,6 +24,20 @@ eva = User.create(
 
 )
 puts "🌿 > Seeding Users - Creating User Instances in our Database"
+
+
+
+
+woobly = CuteCritter.create(
+
+    name: "Woobly", 
+    image: "https://static.wikia.nocookie.net/wubbzy/images/4/4f/WubbzyHQ.png/revision/latest?cb=20200528211225",
+    user: sam
+    # user_id: sam.id
+
+)
+puts "🌿 > Seeding CuteCritters - Creating CuteCritters Instances in our Database"
+
 
 
 

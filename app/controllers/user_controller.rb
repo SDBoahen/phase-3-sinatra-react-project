@@ -2,7 +2,11 @@ class UserController < ApplicationController
 
 
     get "/users" do 
-        User.all.to_json
+        User.all.to_json(
+
+            methods: :cute_critters
+
+        )
         # { we_in: "👀" }.to_json
     end
 
@@ -11,7 +15,7 @@ class UserController < ApplicationController
     get "/users/:id" do
         puts "In: get '/users/:id' "
 
-            u = User.find(params[:id])
+            u = User.find( params[:id] )
             # u = "Woobly"
 
          # binding.pry
@@ -28,10 +32,12 @@ class UserController < ApplicationController
 
     delete "/users/:id" do
         
-        user_to_delete = User.find(params[:id])
+        user_to_delete = User.find( params[:id] )
         user_to_delete.destroy
 
-        # binding.pry
+        binding.pry
+
+        user_deleted_return_to_front_end = user_to_delete.to_json
         
     end
 
