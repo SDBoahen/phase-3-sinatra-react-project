@@ -6,4 +6,10 @@ class ApplicationController < Sinatra::Base
     { message: "Good luck with your project!" }.to_json
   end
 
+  post "/tests" do
+    # Pry.start
+      { woobly: "Ba" }.to_json
+    Pry.start
+  end
+
 end
